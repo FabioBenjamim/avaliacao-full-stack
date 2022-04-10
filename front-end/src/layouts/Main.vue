@@ -17,7 +17,7 @@ export default {
       name: '',
       routes: [
         {
-          name: '• Transferência',
+          name: '• Criar Conta',
           to: '/'
         },
         {
@@ -25,8 +25,8 @@ export default {
           to: '/historico'
         },
         {
-          name: '• Criar Conta',
-          to: '/criarConta'
+          name: '• Transferência',
+          to: '/transferencia'
         }
       ]
     }

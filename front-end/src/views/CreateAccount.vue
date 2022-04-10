@@ -16,7 +16,7 @@
         :isInvalid="validations.saldo"
         validationMessage="Valor inválido"
       />
-      <Button class="row-custom" label="Confirma" @click="sendAccount"/>
+      <Button class="row-custom" label="Criar Conta" @click="sendAccount"/>
     </Card>
   </div>
 </template>

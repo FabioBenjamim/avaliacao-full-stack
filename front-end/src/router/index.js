@@ -7,17 +7,17 @@ const routes = [
   {
     path: '/',
     name: 'Home',
+    component: () => import('../views/CreateAccount.vue')
+  },
+  {
+    path: '/transferencia',
+    name: 'Transferencia',
     component: () => import('../views/Transfer.vue')
   },
   {
     path: '/historico',
     name: 'Historico',
     component: () => import('../views/History.vue')
-  },
-  {
-    path: '/criarConta',
-    name: 'CriarConta',
-    component: () => import('../views/CreateAccount.vue')
   }
 ]
 
