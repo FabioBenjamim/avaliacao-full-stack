@@ -11,7 +11,7 @@
       />
       <Money
         class="row-custom"
-        label="Valor"
+        label="Saldo"
         v-model="model.saldo"
         :isInvalid="validations.saldo"
         validationMessage="Valor inválido"
