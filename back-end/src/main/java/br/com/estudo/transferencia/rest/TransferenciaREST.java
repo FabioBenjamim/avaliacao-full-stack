@@ -25,9 +25,9 @@ public class TransferenciaREST {
 		_business.salvaTransferencia(transferencia);
 	}
 	
-	@GetMapping("/{numero}")
-	public List<TransferenciaDTO> findByConta(@PathVariable String numero) {
-		return _business.findByConta(numero);
+	@GetMapping
+	public List<TransferenciaDTO> findByConta() {
+		return _business.findAll();
 	}
 
 }

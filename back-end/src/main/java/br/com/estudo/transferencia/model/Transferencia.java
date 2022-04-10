@@ -25,15 +25,14 @@ public class Transferencia {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Transferencia(UUID id, Conta contaOrigem, Conta contaDestino, BigDecimal valorOperacao,
-			LocalDate dataTransferencia, LocalDate dataAgendamento) {
+	public Transferencia(Conta contaOrigem, Conta contaDestino, BigDecimal valorOperacao,
+			LocalDate dataTransferencia) {
 		super();
-		this.id = id;
 		this.contaOrigem = contaOrigem;
 		this.contaDestino = contaDestino;
 		this.valorOperacao = valorOperacao;
 		this.dataTransferencia = dataTransferencia;
-		this.dataAgendamento = dataAgendamento;
+		this.dataAgendamento = LocalDate.now();
 	}
 
 	@Id

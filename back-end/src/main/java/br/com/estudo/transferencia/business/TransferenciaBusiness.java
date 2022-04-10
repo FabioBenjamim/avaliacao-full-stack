@@ -28,8 +28,7 @@ public class TransferenciaBusiness {
 		
 		Conta contaDestino = _contaBusiness.findByNumero(transferenciaDTO.getContaDestino());
 		Conta contaOrigem = _contaBusiness.findByNumero(transferenciaDTO.getContaOrigem());
-		Transferencia transferencia = new Transferencia(transferenciaDTO.getId(), contaOrigem, contaDestino, transferenciaDTO.getValorOperacao(), transferenciaDTO.getDataTransferencia(), transferenciaDTO.getDataAgendamento());
-		
+		Transferencia transferencia = new Transferencia(contaOrigem, contaDestino, transferenciaDTO.getValorOperacao(), transferenciaDTO.getDataTransferencia());
 		transferencia.setTaxa(calcular(transferencia, new TaxaA(new TaxaB(new TaxaC(new TaxaD(null))))));
 		
 		_repository.save(transferencia);
@@ -41,5 +40,9 @@ public class TransferenciaBusiness {
 
 	public List<TransferenciaDTO> findByConta(String numero) {
 		return TransferenciaDTO.converter(_repository.findByContaOrigem(numero));
+	}
+
+	public List<TransferenciaDTO> findAll() {
+		return TransferenciaDTO.converter(_repository.findAll());
 	}
 }

@@ -17,17 +17,14 @@ public class TransferenciaDTO {
 	}
 	
 	public TransferenciaDTO(Transferencia transferencia) {
-		this.id = transferencia.getId();
 		this.contaOrigem = transferencia.getContaOrigem().getNumero();
 		this.contaDestino = transferencia.getContaDestino().getNumero();
 		this.taxa = transferencia.getTaxa();
 		this.valorOperacao = transferencia.getValorOperacao();
 		this.dataTransferencia = transferencia.getDataTransferencia();
-		this.dataAgendamento = transferencia.getDataAgendamento();
+		this.dataAgendamento = LocalDate.now();
 		
 	}
-	
-	private UUID id;
 	
 	private String contaOrigem;
 	
@@ -37,10 +34,10 @@ public class TransferenciaDTO {
 	
 	private BigDecimal valorOperacao;
 	
-	@JsonFormat(pattern="dd-MM-yyyy")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private LocalDate dataTransferencia;
 	
-	@JsonFormat(pattern="dd-MM-yyyy")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private LocalDate dataAgendamento;
 	
 	public BigDecimal getTaxa() {
@@ -49,14 +46,6 @@ public class TransferenciaDTO {
 	
 	public void setTaxa(BigDecimal taxa) {
 		this.taxa = taxa;
-	}
-
-	public UUID getId() {
-		return id;
-	}
-	
-	public void setId(UUID id) {
-		this.id = id;
 	}
 
 	public String getContaOrigem() {
